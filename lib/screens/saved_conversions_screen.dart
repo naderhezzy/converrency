@@ -79,7 +79,7 @@ class SavedConversionsScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    'Base: ${conversion['amount']}',
+                                    'Base: ${conversion['base']}',
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: appColors.shade700,

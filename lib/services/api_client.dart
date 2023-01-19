@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class ApiClient {
@@ -29,7 +30,7 @@ class ApiClient {
       "/convert",
       {
         "accept": "application/json",
-        "api_key": "dfebadbc9a-e216fed717-rolnh7",
+        "api_key": dotenv.get("API_KEY"),
         "from": from,
         "to": to,
         "amount": amount,

@@ -25,7 +25,6 @@ class _InitialScreenState extends State<InitialScreen> {
 
   Future<List<String>> _getCurrencyList() async {
     final currencyList = await _apiClient.getCurrencies();
-    print(currencyList);
     return currencyList;
   }
 

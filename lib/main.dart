@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:provider/provider.dart';
 
@@ -8,7 +9,8 @@ import 'package:new_app/providers/user_provider.dart';
 import 'package:new_app/screens/converter_screen.dart';
 import 'package:new_app/screens/saved_conversions_screen.dart';
 
-void main() {
+Future<void> main() async {
+  dotenv.load();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => UserProvider()),

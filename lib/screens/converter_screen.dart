@@ -59,7 +59,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
   }
 
   void _saveConversion() async {
-    if (_inputController.text.isEmpty) return;
+    if (_inputController.text.isEmpty || _conversionResult == null) return;
 
     final _userId = context.read<UserProvider>().userId;
     final prefs = await SharedPreferences.getInstance();

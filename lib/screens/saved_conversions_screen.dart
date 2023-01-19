@@ -34,11 +34,18 @@ class SavedConversionsScreen extends StatelessWidget {
           child: FutureBuilder<List>(
             future: _getSavedConversions(context),
             builder: (context, snapshot) {
+              if (snapshot.data == null) {
+                return const Center(
+                  child: Text("You have no saved conversions"),
+                );
+              }
+
               if (snapshot.hasData) {
                 return ListView.builder(
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
                       final conversion = snapshot.data![index];
+
                       final resultCurrency =
                           conversion['result'].keys.toList()[0];
                       final conversionResult =
